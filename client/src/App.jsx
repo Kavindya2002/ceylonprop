@@ -1,19 +1,25 @@
 import { useState } from 'react'
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
+import { Home } from 'lucide-react';
+import Signin from './pages/Signin';
+import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
+import About from './pages/About';
 
 
 function App() {
   const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div className="bg-blue-500 text-white p-4">
-  Hello, Tailwind CSS!
- 
-</div>
-
-    </>
-  )
+  return <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<Home />} />
+    <Route path='/sign-in' element={<Signin />} />
+    <Route path='/sign-up' element={<SignUp />} />
+    <Route path='/profile' element={<Profile />} />
+    <Route path='/about' element={<About />} />
+  </Routes>
+  </BrowserRouter>
 }
 
 export default App
