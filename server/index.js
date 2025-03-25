@@ -1,7 +1,7 @@
 const express = require ('express')
 const mongoose = require ('mongoose')
 const cors = require ('cors')
-
+import userRouter from './routes/user.route.js';
 const app = express()
 require("dotenv").config();
 
@@ -32,3 +32,5 @@ server.on('error', (err) => {
         process.exit(1);
     }
 });
+
+app.use("/api/user", userRoutes);
